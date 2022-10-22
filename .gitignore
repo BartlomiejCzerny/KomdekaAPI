@@ -1,2 +1,4 @@
 # Ignoruje pliki pamięci podręcznej
 .vs/*
+*/bin/*
+*/obj/*

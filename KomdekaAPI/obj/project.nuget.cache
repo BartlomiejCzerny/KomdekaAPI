@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5mxY3FHz6LJhEE04jMFA2KEnnzW1UseOoTDdRfgmBbFWFAezWVdiZICQPzEfrtzBzONVCa2Bb1HDla8vPZaCMQ==",
+  "dgSpecHash": "ahNxwviTGOaUj57y8yw0fcixdW7h79uzekMz5VhlPad4k/9uhvKYY/ZJwnjjqw7WRVOrcZG/X4nhsmeVcigYjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bartek\\source\\repos\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj",
+  "projectFilePath": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bartek\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Bartek\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
