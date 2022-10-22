@@ -1,4 +1,6 @@
-# Ignoruje pliki pamięci podręcznej
+# Ignore cache files
 .vs/*
-*/bin/*
-*/obj/*
+KomdekaAPI/bin/*
+KomdekaAPI/obj/*
+EmailService/bin/*
+EmailService/obj/*
