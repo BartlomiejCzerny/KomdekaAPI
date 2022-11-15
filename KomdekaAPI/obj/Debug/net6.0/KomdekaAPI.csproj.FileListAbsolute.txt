@@ -552,3 +552,8 @@ C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\scopedcs
 C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\KomdekaAPI.csproj.CopyComplete
 C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\KomdekaAPI.genruntimeconfig.cache
 C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\ref\KomdekaAPI.dll
+C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\staticwebassets\msbuild.KomdekaAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.KomdekaAPI.props
+C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.KomdekaAPI.props
+C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.KomdekaAPI.props
+C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\KomdekaAPI\obj\Debug\net6.0\staticwebassets.pack.json

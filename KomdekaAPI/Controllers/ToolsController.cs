@@ -36,7 +36,7 @@ namespace KomdekaAPI.Controllers
 
             if (tool == null)
             {
-                return NotFound();
+                return NotFound("Nie znaleziono narzędzia.");
             }
 
             return tool;
@@ -49,7 +49,7 @@ namespace KomdekaAPI.Controllers
         {
             if (id != tool.IdNumber)
             {
-                return BadRequest();
+                return BadRequest("Nie można zmienić numeru identyfikacyjnego narzędzia.");
             }
 
             _context.Entry(tool).State = EntityState.Modified;
@@ -62,7 +62,7 @@ namespace KomdekaAPI.Controllers
             {
                 if (!ToolExists(id))
                 {
-                    return NotFound();
+                    return NotFound("Nie znaleziono narzędzia.");
                 }
                 else
                 {
@@ -87,7 +87,7 @@ namespace KomdekaAPI.Controllers
             {
                 if (ToolExists(tool.IdNumber))
                 {
-                    return Conflict("Narzędzie o tym id istnieje.");
+                    return Conflict("Narzędzie o podanym numerze identyfikacyjnym istnieje.");
                 }
                 else
                 {
@@ -105,7 +105,7 @@ namespace KomdekaAPI.Controllers
             var tool = await _context.Tools.FindAsync(id);
             if (tool == null)
             {
-                return NotFound();
+                return NotFound("Nie znaleziono narzędzia.");
             }
 
             _context.Tools.Remove(tool);
