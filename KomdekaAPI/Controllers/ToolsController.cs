@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KomdekaAPI.Entities;
@@ -21,14 +19,12 @@ namespace KomdekaAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Tools
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tool>>> GetTools()
         {
             return await _context.Tools.ToListAsync();
         }
 
-        // GET: api/Tools/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Tool>> GetTool(string id)
         {
@@ -42,8 +38,6 @@ namespace KomdekaAPI.Controllers
             return tool;
         }
 
-        // PUT: api/Tools/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTool(string id, Tool tool)
         {
@@ -73,8 +67,6 @@ namespace KomdekaAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Tools
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Tool>> PostTool(Tool tool)
         {
@@ -87,7 +79,7 @@ namespace KomdekaAPI.Controllers
             {
                 if (ToolExists(tool.IdNumber))
                 {
-                    return Conflict("Narzędzie o podanym numerze identyfikacyjnym istnieje.");
+                    return BadRequest("Narzędzie o podanym numerze identyfikacyjnym istnieje.");
                 }
                 else
                 {
@@ -98,7 +90,6 @@ namespace KomdekaAPI.Controllers
             return CreatedAtAction("GetTool", new { id = tool.IdNumber }, tool);
         }
 
-        // DELETE: api/Tools/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTool(string id)
         {
