@@ -83,8 +83,8 @@ namespace KomdekaAPI.Migrations
                     SerialNumber = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     IsMetrologicalService = table.Column<bool>(type: "bit", nullable: true),
                     MetrologicalServiceInterval = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastMetrologicalService = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ValidUntil = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastMetrologicalService = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    ValidUntil = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

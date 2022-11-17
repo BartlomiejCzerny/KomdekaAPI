@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KomdekaAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220912175204_InitialCreate")]
+    [Migration("20221117222126_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,8 +79,8 @@ namespace KomdekaAPI.Migrations
                     b.Property<bool?>("IsMetrologicalService")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastMetrologicalService")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset?>("LastMetrologicalService")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("MetrologicalServiceInterval")
                         .HasColumnType("nvarchar(max)");
@@ -103,8 +103,8 @@ namespace KomdekaAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ValidUntil")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset?>("ValidUntil")
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("IdNumber");
 

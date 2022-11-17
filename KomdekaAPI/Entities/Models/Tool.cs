@@ -26,23 +26,19 @@ namespace KomdekaAPI.Entities.Models
         [MaxLength(255, ErrorMessage = "Numer fabryczny może zawierać maksymalnie 255 znaków.")]
         public string SerialNumber { get; set; }
 
-        [Display(Name = "Czy podlega obsłudze metrologicznej")]
+        [Display(Name = "Czy podlega obsłudze metrologicznej?")]
         public bool? IsMetrologicalService { get; set; }
-
-        //[Display(Name = "Okres ważności")]
-        //[DataType(DataType.Date, ErrorMessage = "Wprowadzono datę w nieprawidłowym formacie.")]
-        //public DateTime PeriodValidity { get; set; }
 
         [Display(Name = "Interwał obsługi metrologicznej")]
         public string? MetrologicalServiceInterval { get; set; }
 
         [Display(Name = "Data ostatniej obsługi metrologicznej")]
         [DataType(DataType.Date, ErrorMessage = "Wprowadzono datę w nieprawidłowym formacie.")]
-        public DateTime? LastMetrologicalService { get; set; }
+        public DateTimeOffset? LastMetrologicalService { get; set; }
 
         [Display(Name = "Ważny do")]
         [DataType(DataType.Date, ErrorMessage = "Wprowadzono datę w nieprawidłowym formacie.")]
-        public DateTime? ValidUntil { get; set; }
+        public DateTimeOffset? ValidUntil { get; set; }
 
         [Display(Name = "Status")]
         [Required(ErrorMessage = "Nie wybrano statusu.")]
