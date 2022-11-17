@@ -77,8 +77,8 @@ namespace KomdekaAPI.Migrations
                     b.Property<bool?>("IsMetrologicalService")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastMetrologicalService")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset?>("LastMetrologicalService")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("MetrologicalServiceInterval")
                         .HasColumnType("nvarchar(max)");
@@ -101,8 +101,8 @@ namespace KomdekaAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ValidUntil")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset?>("ValidUntil")
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("IdNumber");
 
