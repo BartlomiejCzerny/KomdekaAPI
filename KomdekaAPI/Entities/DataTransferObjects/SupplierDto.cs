@@ -1,6 +1,6 @@
 ﻿namespace KomdekaAPI.Entities.DataTransferObjects
 {
-    public class ToolDto
+    public class SupplierDto
     {
         public string ErrorMessage { get; set; }
     }

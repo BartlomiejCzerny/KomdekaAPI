@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace KomdekaAPI.Entities.Models
 {
@@ -12,13 +11,12 @@ namespace KomdekaAPI.Entities.Models
         [MaxLength(15, ErrorMessage = "Numer identyfikacyjny może zawierać maksymalnie 15 znaków.")]
         public string IdNumber { get; set; }
 
-        [Display(Name = "Nazwa dostawcy")]
+        [Display(Name = "Nazwa")]
         [Required(ErrorMessage = "Nie wprowadzono nazwy.")]
         [MaxLength(255, ErrorMessage = "Nazwa może zawierać maksymalnie 255 znaków.")]
         public string Name { get; set; }
 
         [Display(Name = "Ulica")]
-        [Required(ErrorMessage = "Nie wprowadzono ulicy.")]
         [MaxLength(255, ErrorMessage = "Ulica może zawierać maksymalnie 255 znaków.")]
         public string Street { get; set; }
 
@@ -43,12 +41,14 @@ namespace KomdekaAPI.Entities.Models
         public string ActivitiesRange { get; set; }
 
         [Display(Name = "Data zatwierdzenia")]
+        [Required(ErrorMessage = "Nie wybrano daty zatwierdzenia.")]
         [DataType(DataType.Date, ErrorMessage = "Wprowadzono datę w nieprawidłowym formacie.")]
-        public DateTime ApprovalDate { get; set; }
+        public DateTimeOffset ApprovalDate { get; set; }
 
         [Display(Name = "Data wygaśnięcia zatwierdzenia")]
+        [Required(ErrorMessage = "Nie wybrano daty wygaśnięcia zatwierdzenia.")]
         [DataType(DataType.Date, ErrorMessage = "Wprowadzono datę w nieprawidłowym formacie.")]
-        public DateTime ApprovalExpirationDate { get; set; }
+        public DateTimeOffset ApprovalExpirationDate { get; set; }
 
         [Display(Name = "Uwagi")]
         [MaxLength(5000, ErrorMessage = "Uwagi mogą zawierać maksymalnie 5000 znaków.")]

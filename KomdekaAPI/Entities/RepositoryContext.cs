@@ -13,13 +13,10 @@ namespace KomdekaAPI.Entities
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            //modelBuilder.ApplyConfiguration(new OrderConfiguration());
-            
-            //modelBuilder.ApplyConfiguration(new RoleConfiguration());
         }
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<Tool> Tools { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
     }
 }
