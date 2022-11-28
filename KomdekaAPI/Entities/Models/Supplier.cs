@@ -27,7 +27,8 @@ namespace KomdekaAPI.Entities.Models
 
         [Display(Name = "Kod pocztowy")]
         [Required(ErrorMessage = "Nie wprowadzono kodu pocztowego.")]
-        [MaxLength(6, ErrorMessage = "Kod pocztowy może zawierać maksymalnie 6 znaków.")]
+        [MinLength(6, ErrorMessage = "Kod pocztowy musi zawierać 6 znaków.")]
+        [MaxLength(6, ErrorMessage = "Kod pocztowy musi zawierać 6 znaków.")]
         public string ZipCode { get; set; }
 
         [Display(Name = "Miejscowość")]

@@ -160,7 +160,7 @@ namespace KomdekaAPI.Controllers
 
             var confirmResult = await _userManager.ConfirmEmailAsync(user, token);
             if (!confirmResult.Succeeded)
-                return BadRequest("Nie aktywowano konta użytkownika, ponieważ został użyty nieprawidłowy token.");
+                return BadRequest("Nie aktywowano konta użytkownika, gdyż został użyty nieprawidłowy token.");
 
             await _userManager.SetTwoFactorEnabledAsync(user, true);
 

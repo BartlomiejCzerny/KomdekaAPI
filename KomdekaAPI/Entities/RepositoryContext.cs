@@ -16,7 +16,7 @@ namespace KomdekaAPI.Entities
         }
 
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Tool> Tools { get; set; }
         public DbSet<Supplier> Supplier { get; set; }
+        public DbSet<Tool> Tools { get; set; }
     }
 }

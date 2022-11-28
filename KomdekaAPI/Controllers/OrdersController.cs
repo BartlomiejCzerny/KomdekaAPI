@@ -19,35 +19,31 @@ namespace KomdekaAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Orders
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
             return await _context.Orders.ToListAsync();
         }
 
-        // GET: api/Orders/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(int id)
+        public async Task<ActionResult<Order>> GetOrder(string id)
         {
             var order = await _context.Orders.FindAsync(id);
 
             if (order == null)
             {
-                return NotFound();
+                return NotFound("Nie znaleziono zamówienia.");
             }
 
             return order;
         }
 
-        // PUT: api/Orders/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrder(int id, Order order)
+        public async Task<IActionResult> PutOrder(string id, Order order)
         {
-            if (id != order.OrderNumber)
+            if (id != order.IdNumber)
             {
-                return BadRequest();
+                return BadRequest("Nie można zmienić numeru identyfikacyjnego zamówienia.");
             }
 
             _context.Entry(order).State = EntityState.Modified;
@@ -60,7 +56,7 @@ namespace KomdekaAPI.Controllers
             {
                 if (!OrderExists(id))
                 {
-                    return NotFound();
+                    return NotFound("Nie znaleziono zamówienia.");
                 }
                 else
                 {
@@ -71,25 +67,36 @@ namespace KomdekaAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Orders
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
             _context.Orders.Add(order);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (OrderExists(order.IdNumber))
+                {
+                    return BadRequest("Zamówienie o podanym numerze identyfikacyjnym istnieje.");
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return CreatedAtAction("GetOrder", new { id = order.OrderNumber }, order);
+            return CreatedAtAction("GetOrder", new { id = order.IdNumber }, order);
         }
 
-        // DELETE: api/Orders/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrder(int id)
+        public async Task<IActionResult> DeleteOrder(string id)
         {
             var order = await _context.Orders.FindAsync(id);
             if (order == null)
             {
-                return NotFound();
+                return NotFound("Nie znaleziono zamówienia.");
             }
 
             _context.Orders.Remove(order);
@@ -98,9 +105,9 @@ namespace KomdekaAPI.Controllers
             return NoContent();
         }
 
-        private bool OrderExists(int id)
+        private bool OrderExists(string id)
         {
-            return _context.Orders.Any(e => e.OrderNumber == id);
+            return _context.Orders.Any(e => e.IdNumber == id);
         }
     }
 }
