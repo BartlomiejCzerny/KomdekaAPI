@@ -54,23 +54,112 @@ namespace KomdekaAPI.Migrations
                 name: "Orders",
                 columns: table => new
                 {
-                    OrderNumber = table.Column<int>(type: "int", nullable: false),
-                    CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BuildingNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ZipCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Place = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    OrderDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OrderComments = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CustomerSignature = table.Column<bool>(type: "bit", nullable: false),
-                    ContractorSignature = table.Column<bool>(type: "bit", nullable: false)
+                    IdNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    OrderNumber = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    CustomerName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Street = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    BuildingNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    ZipCode = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
+                    Place = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CustomerFirstName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    CustomerLastName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    AdmissionOrderDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    OrderDescription = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    OrderComments = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    CustomerSignature = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContractorSignature = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AreRequirementsDefined = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AreDocumentsUpToDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AreQualityApprovalsUpToDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HaveSuppliersApprovals = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HaveProductionAndEquipmentProcedures = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HaveControlProcedures = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HaveTheResources = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HaveEmployeesAndSkills = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AreFirstPieceRequirementsDefined = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HaveWarehousesAndResources = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HasRiskAssessed = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsPriceCorrect = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AreDeliveryTermsChecked = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OrderNum = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    OrderRequirements = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    RequirementsEstablishedDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    OrderingPersonSignature = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProjectCardNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    OrderNo = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    OrderingPersonName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    ProjectTeam = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    DocumentName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    DocumentNumber = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    Comments = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    ReviewResult = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    IdentifiedProblems = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    PlannedActivities = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    VerificationResult = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    EncounteredProblems = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    PlannedWorks = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    ValidationResult = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    Problems = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    Activities = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    DescriptionOfChange = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    ShiftCardNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
+                    DocName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    DocumentOrDrawingNumber = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Remarks = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    AdditionalInformation = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    AdditionalComments = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    ProjectApproval = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    DesignTeamSignatures = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    JobGuideNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    ReleaseDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    Customer = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    ProductName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    DrawingNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    DrawingRelease = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    Material = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    MeltCertificateProof = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    OrderNr = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    Quantity = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    JobGuideContent = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    QualityCertificateNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    Purchaser = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    OrderNbr = table.Column<int>(type: "int", maxLength: 15, nullable: false),
+                    MadeProducts = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    RemarksAndLimitations = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    Position = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Signature = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Date = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    CustomerComments = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    TimeSatisfaction = table.Column<int>(type: "int", maxLength: 1, nullable: false),
+                    QualitySatisfaction = table.Column<int>(type: "int", maxLength: 1, nullable: false),
+                    ClientSignature = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ExecutingPersonSignature = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.OrderNumber);
+                    table.PrimaryKey("PK_Orders", x => x.IdNumber);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Supplier",
+                columns: table => new
+                {
+                    IdNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Street = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    BuildingNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    ZipCode = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
+                    Place = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    ActivitiesRange = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    ApprovalDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    ApprovalExpirationDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    Remarks = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Supplier", x => x.IdNumber);
                 });
 
             migrationBuilder.CreateTable(
@@ -257,6 +346,9 @@ namespace KomdekaAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Supplier");
 
             migrationBuilder.DropTable(
                 name: "Tools");
