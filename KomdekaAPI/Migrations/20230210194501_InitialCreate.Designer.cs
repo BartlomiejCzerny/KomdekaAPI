@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KomdekaAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20221128222306_InitialCreate")]
+    [Migration("20230210194501_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,42 +45,35 @@ namespace KomdekaAPI.Migrations
                     b.Property<DateTimeOffset>("AdmissionOrderDate")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<string>("AreDeliveryTermsChecked")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("AreDeliveryTermsChecked")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("AreDocumentsUpToDate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("AreDocumentsUpToDate")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("AreFirstPieceRequirementsDefined")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("AreFirstPieceRequirementsDefined")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("AreQualityApprovalsUpToDate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("AreQualityApprovalsUpToDate")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("AreRequirementsDefined")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("AreRequirementsDefined")
+                        .HasColumnType("bit");
 
                     b.Property<string>("BuildingNumber")
                         .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<string>("ClientSignature")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("ClientSignature")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Comments")
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ContractorSignature")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("ContractorSignature")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Customer")
                         .IsRequired()
@@ -106,9 +99,8 @@ namespace KomdekaAPI.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("CustomerSignature")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("CustomerSignature")
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset>("Date")
                         .HasColumnType("datetimeoffset");
@@ -117,9 +109,8 @@ namespace KomdekaAPI.Migrations
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DesignTeamSignatures")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("DesignTeamSignatures")
+                        .HasColumnType("bit");
 
                     b.Property<string>("DocName")
                         .HasMaxLength(255)
@@ -130,7 +121,6 @@ namespace KomdekaAPI.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("DocumentNumber")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<string>("DocumentOrDrawingNumber")
@@ -144,57 +134,47 @@ namespace KomdekaAPI.Migrations
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<int>("DrawingRelease")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<string>("EncounteredProblems")
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ExecutingPersonSignature")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("ExecutingPersonSignature")
+                        .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("HasRiskAssessed")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("HasRiskAssessed")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("HaveControlProcedures")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("HaveControlProcedures")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("HaveEmployeesAndSkills")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("HaveEmployeesAndSkills")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("HaveProductionAndEquipmentProcedures")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("HaveProductionAndEquipmentProcedures")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("HaveSuppliersApprovals")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("HaveSuppliersApprovals")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("HaveTheResources")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("HaveTheResources")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("HaveWarehousesAndResources")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("HaveWarehousesAndResources")
+                        .HasColumnType("bit");
 
                     b.Property<string>("IdentifiedProblems")
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IsPriceCorrect")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("IsPriceCorrect")
+                        .HasColumnType("bit");
 
                     b.Property<string>("JobGuideContent")
                         .IsRequired()
@@ -236,23 +216,18 @@ namespace KomdekaAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderNbr")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<int>("OrderNo")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<int>("OrderNr")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<int>("OrderNum")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<int>("OrderNumber")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<string>("OrderRequirements")
@@ -265,9 +240,8 @@ namespace KomdekaAPI.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("OrderingPersonSignature")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("OrderingPersonSignature")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Place")
                         .IsRequired()
@@ -321,11 +295,9 @@ namespace KomdekaAPI.Migrations
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<int>("QualitySatisfaction")
-                        .HasMaxLength(1)
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
-                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<DateTimeOffset>("ReleaseDate")
@@ -351,16 +323,14 @@ namespace KomdekaAPI.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<string>("Signature")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Signature")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Street")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("TimeSatisfaction")
-                        .HasMaxLength(1)
                         .HasColumnType("int");
 
                     b.Property<string>("ValidationResult")
