@@ -29,7 +29,7 @@ namespace KomdekaAPI.Entities.Models
         public bool? IsMetrologicalService { get; set; }
 
         [Display(Name = "Interwał obsługi metrologicznej")]
-        public string? MetrologicalServiceInterval { get; set; }
+        public string MetrologicalServiceInterval { get; set; }
 
         [Display(Name = "Data ostatniej obsługi metrologicznej")]
         [DataType(DataType.Date, ErrorMessage = "Wprowadzono datę w nieprawidłowym formacie.")]
