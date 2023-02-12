@@ -81,6 +81,7 @@ namespace KomdekaAPI.Migrations
                     HasRiskAssessed = table.Column<bool>(type: "bit", nullable: false),
                     IsPriceCorrect = table.Column<bool>(type: "bit", nullable: false),
                     AreDeliveryTermsChecked = table.Column<bool>(type: "bit", nullable: false),
+                    OrderReviewResult = table.Column<bool>(type: "bit", nullable: false),
                     OrderNum = table.Column<int>(type: "int", nullable: false),
                     OrderRequirements = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
                     RequirementsEstablishedDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),

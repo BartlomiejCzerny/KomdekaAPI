@@ -128,6 +128,8 @@ namespace KomdekaAPI.Entities.Models
         [Required(ErrorMessage = "Nie określono, czy warunki dostaw zostały sprawdzone.")]
         public bool AreDeliveryTermsChecked { get; set; }
 
+        [Display(Name = "Wynik przeglądu")]
+        public bool OrderReviewResult { get; set; }
 
         //Wymagania do zamówienia
         [Display(Name = "Numer zamówienia")]
