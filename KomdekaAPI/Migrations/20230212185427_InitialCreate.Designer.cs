@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KomdekaAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230210194501_InitialCreate")]
+    [Migration("20230212185427_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -234,6 +234,9 @@ namespace KomdekaAPI.Migrations
                         .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("OrderReviewResult")
+                        .HasColumnType("bit");
 
                     b.Property<string>("OrderingPersonName")
                         .IsRequired()

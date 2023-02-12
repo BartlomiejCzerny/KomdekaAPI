@@ -233,6 +233,9 @@ namespace KomdekaAPI.Migrations
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("OrderReviewResult")
+                        .HasColumnType("bit");
+
                     b.Property<string>("OrderingPersonName")
                         .IsRequired()
                         .HasMaxLength(255)
