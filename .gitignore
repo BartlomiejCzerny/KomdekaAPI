@@ -1,6 +1,4 @@
 # Ignore cache files
-.vs/*
-KomdekaAPI/bin/*
-KomdekaAPI/obj/*
-EmailService/bin/*
-EmailService/obj/*
+**/.vs/*
+**/bin/*
+**/obj/*
