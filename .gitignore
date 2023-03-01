@@ -1,4 +1,4 @@
 # Ignore cache files
-**/.vs/*
-**/bin/*
-**/obj/*
+.vs/*
+KomdekaAPI/bin/*
+KomdekaAPI/obj/*
