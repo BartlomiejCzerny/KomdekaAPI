@@ -1,4 +1,5 @@
-﻿using KomdekaAPI.Entities.Models;
+﻿using KomdekaAPI.Entities.Configuration;
+using KomdekaAPI.Entities.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace KomdekaAPI.Entities
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
         }
 
         public DbSet<Order> Orders { get; set; }

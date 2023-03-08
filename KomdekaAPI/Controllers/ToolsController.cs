@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KomdekaAPI.Entities;
 using KomdekaAPI.Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KomdekaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ToolsController : ControllerBase
     {
         private readonly RepositoryContext _context;
@@ -68,6 +70,7 @@ namespace KomdekaAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult<Tool>> PostTool(Tool tool)
         {
             _context.Tools.Add(tool);
@@ -91,6 +94,7 @@ namespace KomdekaAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteTool(string id)
         {
             var tool = await _context.Tools.FindAsync(id);

@@ -5,11 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KomdekaAPI.Entities;
 using KomdekaAPI.Entities.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace KomdekaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class SuppliersController : ControllerBase
     {
         private readonly RepositoryContext _context;
@@ -68,6 +71,7 @@ namespace KomdekaAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult<Supplier>> PostSupplier(Supplier supplier)
         {
             _context.Supplier.Add(supplier);
@@ -91,6 +95,7 @@ namespace KomdekaAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteSupplier(string id)
         {
             var supplier = await _context.Supplier.FindAsync(id);
