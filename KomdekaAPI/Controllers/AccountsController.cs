@@ -3,6 +3,7 @@ using EmailService;
 using KomdekaAPI.Entities.DataTransferObjects;
 using KomdekaAPI.Entities.Models;
 using KomdekaAPI.JwtFeatures;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
@@ -64,6 +65,8 @@ namespace KomdekaAPI.Controllers
 
             var message = new Message(new string[] { user.Email }, subject, greeting + body + signature);
             await _emailSender.SendEmailAsync(message);
+
+            await _userManager.AddToRoleAsync(user, "Pracownik");
 
             return StatusCode(201);
         }
@@ -145,7 +148,7 @@ namespace KomdekaAPI.Controllers
 
             var validVerification = await _userManager.VerifyTwoFactorTokenAsync(user, twoFactorDto.Provider, twoFactorDto.Token);
             if (!validVerification)
-                return BadRequest("Wprowadzono nieprawidłowy token.");
+                return BadRequest("Wprowadzono nieprawidłowy kod weryfikacyjny.");
 
             var token = await _jwtHandler.GenerateToken(user);
             return Ok(new AuthResponseDto { IsAuthSuccessful = true, Token = token });
@@ -160,7 +163,7 @@ namespace KomdekaAPI.Controllers
 
             var confirmResult = await _userManager.ConfirmEmailAsync(user, token);
             if (!confirmResult.Succeeded)
-                return BadRequest("Nie aktywowano konta użytkownika, gdyż został użyty nieprawidłowy token.");
+                return BadRequest("Nie aktywowano konta użytkownika, gdyż został użyty nieprawidłowy link aktywacyjny.");
 
             await _userManager.SetTwoFactorEnabledAsync(user, true);
 

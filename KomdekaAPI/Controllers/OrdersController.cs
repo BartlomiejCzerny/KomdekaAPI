@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KomdekaAPI.Entities;
 using KomdekaAPI.Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KomdekaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class OrdersController : ControllerBase
     {
         private readonly RepositoryContext _context;
