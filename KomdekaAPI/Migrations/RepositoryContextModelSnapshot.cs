@@ -17,10 +17,10 @@ namespace KomdekaAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.10")
+                .HasAnnotation("ProductVersion", "7.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("KomdekaAPI.Entities.Models.Order", b =>
                 {
@@ -545,15 +545,13 @@ namespace KomdekaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "713ce6eb-110e-4411-a54e-eed51a0205d8",
-                            ConcurrencyStamp = "c72d6916-5fde-40e2-9716-05c0084d4495",
+                            Id = "8d8b789f-6df1-4019-8dc1-6be66c73d8f8",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "6c6107f3-9393-4ab0-8132-07928772176b",
-                            ConcurrencyStamp = "69a0e5b2-a397-42de-bf32-5e1cbb4f8eb0",
+                            Id = "58db5b56-638e-426f-b82e-a0f4e8a5107f",
                             Name = "Pracownik",
                             NormalizedName = "PRACOWNIK"
                         });
@@ -565,7 +563,7 @@ namespace KomdekaAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -590,7 +588,7 @@ namespace KomdekaAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
