@@ -24,13 +24,13 @@ namespace KomdekaAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tool>>> GetTools()
         {
-            return await _context.Tools.ToListAsync();
+            return await _context.Tool.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Tool>> GetTool(string id)
         {
-            var tool = await _context.Tools.FindAsync(id);
+            var tool = await _context.Tool.FindAsync(id);
 
             if (tool == null)
             {
@@ -73,7 +73,7 @@ namespace KomdekaAPI.Controllers
         [Authorize(Roles = "Administrator")]
         public async Task<ActionResult<Tool>> PostTool(Tool tool)
         {
-            _context.Tools.Add(tool);
+            _context.Tool.Add(tool);
             try
             {
                 await _context.SaveChangesAsync();
@@ -97,13 +97,13 @@ namespace KomdekaAPI.Controllers
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteTool(string id)
         {
-            var tool = await _context.Tools.FindAsync(id);
+            var tool = await _context.Tool.FindAsync(id);
             if (tool == null)
             {
                 return NotFound("Nie znaleziono narzędzia.");
             }
 
-            _context.Tools.Remove(tool);
+            _context.Tool.Remove(tool);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -111,7 +111,7 @@ namespace KomdekaAPI.Controllers
 
         private bool ToolExists(string id)
         {
-            return _context.Tools.Any(e => e.IdNumber == id);
+            return _context.Tool.Any(e => e.IdNumber == id);
         }
     }
 }

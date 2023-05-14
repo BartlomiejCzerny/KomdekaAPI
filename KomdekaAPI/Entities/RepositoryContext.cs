@@ -17,8 +17,8 @@ namespace KomdekaAPI.Entities
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
         }
 
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<Order> Order { get; set; }
         public DbSet<Supplier> Supplier { get; set; }
-        public DbSet<Tool> Tools { get; set; }
+        public DbSet<Tool> Tool { get; set; }
     }
 }
