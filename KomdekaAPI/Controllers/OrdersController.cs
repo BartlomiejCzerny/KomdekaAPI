@@ -24,13 +24,13 @@ namespace KomdekaAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
-            return await _context.Orders.ToListAsync();
+            return await _context.Order.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(string id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Order.FindAsync(id);
 
             if (order == null)
             {
@@ -72,7 +72,7 @@ namespace KomdekaAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
-            _context.Orders.Add(order);
+            _context.Order.Add(order);
             try
             {
                 await _context.SaveChangesAsync();
@@ -95,13 +95,13 @@ namespace KomdekaAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(string id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Order.FindAsync(id);
             if (order == null)
             {
                 return NotFound("Nie znaleziono zamówienia.");
             }
 
-            _context.Orders.Remove(order);
+            _context.Order.Remove(order);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -109,7 +109,7 @@ namespace KomdekaAPI.Controllers
 
         private bool OrderExists(string id)
         {
-            return _context.Orders.Any(e => e.IdNumber == id);
+            return _context.Order.Any(e => e.IdNumber == id);
         }
     }
 }
