@@ -8,12 +8,12 @@ namespace KomdekaAPI.Entities.Models
         [Key]
         [Display(Name = "Numer identyfikacyjny")]
         [Required(ErrorMessage = "Nie wprowadzono numeru identyfikacyjnego.")]
-        [MaxLength(15, ErrorMessage = "Numer identyfikacyjny może zawierać maksymalnie 15 znaków.")]
+        [StringLength(15, ErrorMessage = "Numer identyfikacyjny może zawierać maksymalnie 15 znaków.")]
         public string IdNumber { get; set; }
 
         [Display(Name = "Nazwa")]
         [Required(ErrorMessage = "Nie wprowadzono nazwy.")]
-        [MaxLength(255, ErrorMessage = "Nazwa może zawierać maksymalnie 255 znaków.")]
+        [StringLength(255, ErrorMessage = "Nazwa może zawierać maksymalnie 255 znaków.")]
         public string Name { get; set; }
 
         [Display(Name = "Typ")]
@@ -22,7 +22,7 @@ namespace KomdekaAPI.Entities.Models
 
         [Display(Name = "Numer fabryczny")]
         [Required(ErrorMessage = "Nie wprowadzono numeru fabrycznego.")]
-        [MaxLength(255, ErrorMessage = "Numer fabryczny może zawierać maksymalnie 255 znaków.")]
+        [StringLength(255, ErrorMessage = "Numer fabryczny może zawierać maksymalnie 255 znaków.")]
         public string SerialNumber { get; set; }
 
         [Display(Name = "Czy podlega obsłudze metrologicznej?")]
