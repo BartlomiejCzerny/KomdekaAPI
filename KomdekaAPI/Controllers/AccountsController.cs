@@ -3,7 +3,6 @@ using EmailService;
 using KomdekaAPI.Entities.DataTransferObjects;
 using KomdekaAPI.Entities.Models;
 using KomdekaAPI.JwtFeatures;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
