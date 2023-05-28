@@ -1,5 +1,4 @@
-﻿using Org.BouncyCastle.Crypto.Tls;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace KomdekaAPI.Entities.Models

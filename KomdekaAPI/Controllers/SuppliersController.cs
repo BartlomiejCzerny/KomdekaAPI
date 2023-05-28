@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using KomdekaAPI.Entities;
 using KomdekaAPI.Entities.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Data;
 
 namespace KomdekaAPI.Controllers
 {
