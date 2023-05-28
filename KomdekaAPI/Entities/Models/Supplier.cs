@@ -8,37 +8,36 @@ namespace KomdekaAPI.Entities.Models
         [Key]
         [Display(Name = "Numer identyfikacyjny")]
         [Required(ErrorMessage = "Nie wprowadzono numeru identyfikacyjnego.")]
-        [MaxLength(15, ErrorMessage = "Numer identyfikacyjny może zawierać maksymalnie 15 znaków.")]
+        [StringLength(15, ErrorMessage = "Numer identyfikacyjny może zawierać maksymalnie 15 znaków.")]
         public string IdNumber { get; set; }
 
         [Display(Name = "Nazwa")]
         [Required(ErrorMessage = "Nie wprowadzono nazwy.")]
-        [MaxLength(255, ErrorMessage = "Nazwa może zawierać maksymalnie 255 znaków.")]
+        [StringLength(255, ErrorMessage = "Nazwa może zawierać maksymalnie 255 znaków.")]
         public string Name { get; set; }
 
         [Display(Name = "Ulica")]
-        [MaxLength(255, ErrorMessage = "Ulica może zawierać maksymalnie 255 znaków.")]
+        [StringLength(255, ErrorMessage = "Ulica może zawierać maksymalnie 255 znaków.")]
         public string Street { get; set; }
 
         [Display(Name = "Numer budynku")]
         [Required(ErrorMessage = "Nie wprowadzono numeru budynku.")]
-        [MaxLength(15, ErrorMessage = "Numer budynku może zawierać maksymalnie 15 znaków.")]
+        [StringLength(15, ErrorMessage = "Numer budynku może zawierać maksymalnie 15 znaków.")]
         public string BuildingNumber { get; set; }
 
         [Display(Name = "Kod pocztowy")]
         [Required(ErrorMessage = "Nie wprowadzono kodu pocztowego.")]
-        [MinLength(6, ErrorMessage = "Kod pocztowy musi zawierać 6 znaków.")]
-        [MaxLength(6, ErrorMessage = "Kod pocztowy musi zawierać 6 znaków.")]
+        [StringLength(6, ErrorMessage = "Kod pocztowy musi zawierać 6 znaków.")]
         public string ZipCode { get; set; }
 
         [Display(Name = "Miejscowość")]
         [Required(ErrorMessage = "Nie wprowadzono miejscowości.")]
-        [MaxLength(255, ErrorMessage = "Miejscowość może zawierać maksymalnie 255 znaków.")]
+        [StringLength(255, ErrorMessage = "Miejscowość może zawierać maksymalnie 255 znaków.")]
         public string Place { get; set; }
 
         [Display(Name = "Zakres działalności")]
         [Required(ErrorMessage = "Nie wprowadzono zakresu działalności.")]
-        [MaxLength(500, ErrorMessage = "Zakres działalności może zawierać maksymalnie 500 znaków.")]
+        [StringLength(500, ErrorMessage = "Zakres działalności może zawierać maksymalnie 500 znaków.")]
         public string ActivitiesRange { get; set; }
 
         [Display(Name = "Data zatwierdzenia")]
@@ -52,7 +51,7 @@ namespace KomdekaAPI.Entities.Models
         public DateTimeOffset ApprovalExpirationDate { get; set; }
 
         [Display(Name = "Uwagi")]
-        [MaxLength(5000, ErrorMessage = "Uwagi mogą zawierać maksymalnie 5000 znaków.")]
+        [StringLength(5000, ErrorMessage = "Uwagi mogą zawierać maksymalnie 5000 znaków.")]
         public string Remarks { get; set; }
     }
 }
