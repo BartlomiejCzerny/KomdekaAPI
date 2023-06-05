@@ -66,65 +66,65 @@ namespace KomdekaAPI.Entities.Models
         public string OrderComments { get; set; }
 
         [Display(Name = "Podpis osoby zamawiającej")]
-        [Required(ErrorMessage = "Nie określono, czy podpisano przez osobę zamawiającą.")]
+        [Required(ErrorMessage = "Podpis osoby zamawiającej jest wymagany.")]
         public bool CustomerSignature { get; set; }
 
         [Display(Name = "Podpis wykonawcy")]
-        [Required(ErrorMessage = "Nie określono, czy podpisano przez wykonawcę.")]
+        [Required(ErrorMessage = "Podpis wykonawcy jest wymagany.")]
         public bool ContractorSignature { get; set; }
 
 
         // Przegląd zamówienia
         [Display(Name = "Czy wymagania do zamówienia są odpowiednio zdefiniowane?")]
-        [Required(ErrorMessage = "Nie określono, czy wymagania do zamówienia są odpowiednio zdefiniowane.")]
+        [Required(ErrorMessage = "Wymagania do zamówienia muszą być odpowiednio zdefiniowane.")]
         public bool AreRequirementsDefined { get; set; }
 
         [Display(Name = "Czy wszystkie rysunki i dokumenty są aktualne?")]
-        [Required(ErrorMessage = "Nie określono, czy wszystkie rysunki i dokumenty są aktualne.")]
+        [Required(ErrorMessage = "Wszystkie rysunki i dokumenty muszą być aktualne.")]
         public bool AreDocumentsUpToDate { get; set; }
 
         [Display(Name = "Czy posiadamy aktualne zatwierdzenia jakości?")]
-        [Required(ErrorMessage = "Nie określono, czy posiadamy aktualne zatwierdzenia jakości.")]
+        [Required(ErrorMessage = "Musimy posiadać aktualne zatwierdzenia jakości.")]
         public bool AreQualityApprovalsUpToDate { get; set; }
 
         [Display(Name = "Czy proponowani poddostawcy posiadają niezbędne zatwierdzenia?")]
-        [Required(ErrorMessage = "Nie określono, czy proponowani poddostawcy posiadają niezbędne zatwierdzenia.")]
+        [Required(ErrorMessage = "Proponowani poddostawcy muszą posiadać niezbędne zatwierdzenia.")]
         public bool HaveSuppliersApprovals { get; set; }
 
         [Display(Name = "Czy mamy niezbędne procedury produkcji i wyposażenia?")]
-        [Required(ErrorMessage = "Nie określono, czy mamy niezbędne procedury produkcji i wyposażenia.")]
+        [Required(ErrorMessage = "Musimy mieć niezbędne procedury produkcji i wyposażenia.")]
         public bool HaveProductionAndEquipmentProcedures { get; set; }
 
         [Display(Name = "Czy mamy niezbędne procedury kontroli?")]
-        [Required(ErrorMessage = "Nie określono, czy mamy niezbędne procedury kontroli.")]
+        [Required(ErrorMessage = "Musimy mieć niezbędne procedury kontroli.")]
         public bool HaveControlProcedures { get; set; }
 
         [Display(Name = "Czy mamy niezbędne zasoby do wykonania wyrobu lub usługi?")]
-        [Required(ErrorMessage = "Nie określono, czy mamy niezbędne zasoby.")]
+        [Required(ErrorMessage = "Musimy mieć niezbędne zasoby.")]
         public bool HaveTheResources { get; set; }
 
         [Display(Name = "Czy mamy wystarczającą ilość pracowników i umiejętności?")]
-        [Required(ErrorMessage = "Nie określono, czy mamy wystarczającą ilość pracowników i umiejętności.")]
+        [Required(ErrorMessage = "Musimy mieć wystarczającą ilość pracowników i umiejętności.")]
         public bool HaveEmployeesAndSkills { get; set; }
 
         [Display(Name = "Czy wymagania kontroli pierwszej sztuki jasno zostały zdefiniowane i wzięte pod uwagę?")]
-        [Required(ErrorMessage = "Nie określono, czy wymagania kontroli pierwszej sztuki jasno zostały zdefiniowane i wzięte pod uwagę.")]
+        [Required(ErrorMessage = "Wymagania kontroli pierwszej sztuki muszą być jasno zdefiniowane i wzięte pod uwagę.")]
         public bool AreFirstPieceRequirementsDefined { get; set; }
 
         [Display(Name = "Czy posiadamy magazyny i zasoby do produkcji?")]
-        [Required(ErrorMessage = "Nie określono, czy posiadamy magazyny i zasoby do produkcji.")]
+        [Required(ErrorMessage = "Musimy posiadać magazyny i zasoby do produkcji.")]
         public bool HaveWarehousesAndResources { get; set; }
 
         [Display(Name = "Czy ryzyko zostało ocenione?")]
-        [Required(ErrorMessage = "Nie określono, czy ryzyko zostało ocenione.")]
+        [Required(ErrorMessage = "Ryzyko musi zostać ocenione.")]
         public bool HasRiskAssessed { get; set; }
 
         [Display(Name = "Czy cena na zamówieniu odpowiada cenie oferowanej?")]
-        [Required(ErrorMessage = "Nie określono, czy cena na zamówieniu odpowiada cenie oferowanej.")]
+        [Required(ErrorMessage = "Cena na zamówieniu musi odpowiadać cenie oferowanej.")]
         public bool IsPriceCorrect { get; set; }
 
         [Display(Name = "Czy warunki dostaw zostały sprawdzone?")]
-        [Required(ErrorMessage = "Nie określono, czy warunki dostaw zostały sprawdzone.")]
+        [Required(ErrorMessage = "Warunki dostaw muszą zostać sprawdzone.")]
         public bool AreDeliveryTermsChecked { get; set; }
 
         [Display(Name = "Wynik przeglądu")]
@@ -147,7 +147,7 @@ namespace KomdekaAPI.Entities.Models
         public DateTimeOffset RequirementsEstablishedDate { get; set; }
 
         [Display(Name = "Podpis")]
-        [Required(ErrorMessage = "Nie określono, czy podpisano przez osobę zamawiającą.")]
+        [Required(ErrorMessage = "Podpis osoby zamawiającej jest wymagany.")]
         public bool OrderingPersonSignature { get; set; }
 
 
@@ -258,7 +258,7 @@ namespace KomdekaAPI.Entities.Models
         public string ProjectApproval { get; set; }
 
         [Display(Name = "Podpisy zespołu projektowego")]
-        [Required(ErrorMessage = "Nie określono, czy podpisano przez osoby z zespołu projektowego.")]
+        [Required(ErrorMessage = "Podpisy zespołu projektowego są wymagane.")]
         public bool DesignTeamSignatures { get; set; }
 
 
@@ -360,7 +360,7 @@ namespace KomdekaAPI.Entities.Models
         public string LastName { get; set; }
 
         [Display(Name = "Podpis")]
-        [Required(ErrorMessage = "Nie określono, czy podpisano.")]
+        [Required(ErrorMessage = "Podpis jest wymagany.")]
         public bool Signature { get; set; }
 
         [Display(Name = "Data")]
@@ -385,11 +385,11 @@ namespace KomdekaAPI.Entities.Models
         public int QualitySatisfaction { get; set; }
 
         [Display(Name = "Podpis osoby zamawiającej")]
-        [Required(ErrorMessage = "Nie określono, czy podpisano przez osobę zamawiającą.")]
+        [Required(ErrorMessage = "Podpis osoby zamawiającej jest wymagany.")]
         public bool ClientSignature { get; set; }
 
         [Display(Name = "Podpis wykonawcy")]
-        [Required(ErrorMessage = "Nie określono, czy podpisano przez wykonawcę.")]
+        [Required(ErrorMessage = "Podpis wykonawcy jest wymagany.")]
         public bool ExecutingPersonSignature { get; set; }
     }
 }
