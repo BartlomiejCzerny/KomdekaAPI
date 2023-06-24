@@ -168,17 +168,19 @@ namespace KomdekaAPI.Entities.Models
         public string OrderingPersonName { get; set; }
 
         [Display(Name = "Zespół projektowy")]
+        [Required(ErrorMessage = "Nie wprowadzono danych zespołu projektowego.")]
         [StringLength(5000, ErrorMessage = "Dane zespołu projektowego mogą zawierać maksymalnie 5000 znaków.")]
         public string ProjectTeam { get; set; }
 
         [Display(Name = "Nazwa dokumentu")]
+        [Required(ErrorMessage = "Nie wprowadzono nazwy dokumentu.")]
         [StringLength(255, ErrorMessage = "Nazwa dokumentu może zawierać maksymalnie 255 znaków.")]
         public string DocumentName { get; set; }
 
         [Display(Name = "Numer dokumentu")]
         [Required(ErrorMessage = "Nie wprowadzono numeru dokumentu.")]
-        [Range(1, 999999999999999, ErrorMessage = "Numer dokumentu może zawierać maksymalnie 15 znaków.")]
-        public int DocumentNumber { get; set; }
+        [StringLength(255, ErrorMessage = "Numer dokumentu może zawierać maksymalnie 255 znaków.")]
+        public string DocumentNumber { get; set; }
 
         [Display(Name = "Uwagi")]
         [StringLength(5000, ErrorMessage = "Uwagi mogą zawierać maksymalnie 5000 znaków.")]
@@ -232,12 +234,13 @@ namespace KomdekaAPI.Entities.Models
         public string ShiftCardNumber { get; set; }
 
         [Display(Name = "Nazwa dokumentu")]
+        [Required(ErrorMessage = "Nie wprowadzono nazwy dokumentu.")]
         [StringLength(255, ErrorMessage = "Nazwa dokumentu może zawierać maksymalnie 255 znaków.")]
         public string DocName { get; set; }
 
-        [Display(Name = "Numer dokumentu/rysunku")]
-        [Required(ErrorMessage = "Nie wprowadzono numeru dokumentu/rysunku.")]
-        [StringLength(255, ErrorMessage = "Numer dokumentu/rysunku może zawierać maksymalnie 255 znaków.")]
+        [Display(Name = "Numer dokumentu / rysunku")]
+        [Required(ErrorMessage = "Nie wprowadzono numeru dokumentu / rysunku.")]
+        [StringLength(255, ErrorMessage = "Numer dokumentu / rysunku może zawierać maksymalnie 255 znaków.")]
         public string DocumentOrDrawingNumber { get; set; }
 
         [Display(Name = "Uwagi")]
