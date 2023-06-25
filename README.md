@@ -1,2 +1,2 @@
 # KomdekaAPI
-API webowego systemu zarządzania jakością w firmie produkcyjnej.
+API serwera webowego systemu zarządzania jakością w firmie produkcyjnej.
