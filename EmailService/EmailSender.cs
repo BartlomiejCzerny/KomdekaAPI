@@ -37,59 +37,58 @@ namespace EmailService
             emailMessage.To.AddRange(message.To);
             emailMessage.Subject = message.Subject;
 
-            var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<div style='color: black; font-size: 12pt'>{0}</div>", message.Content) };
-            
+            var bodyBuilder = new BodyBuilder 
+            { 
+                HtmlBody = string.Format("<div style='color: black; font-size: 12pt'>{0}</div>", message.Content)
+            };
+
             emailMessage.Body = bodyBuilder.ToMessageBody();
             return emailMessage;
         }
 
         private void Send(MimeMessage mailMessage)
         {
-            using (var client = new SmtpClient())
+            using var client = new SmtpClient();
+            try
             {
-                try
-                {
-                    client.ServerCertificateValidationCallback = MySslCertificateValidationCallback;
-                    client.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.Port, SecureSocketOptions.StartTls);
-                    client.AuthenticationMechanisms.Remove("X0AUTH2");
-                    client.Authenticate(_emailConfiguration.Email, _emailConfiguration.Password);
+                client.ServerCertificateValidationCallback = MySslCertificateValidationCallback;
+                client.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.Port, SecureSocketOptions.StartTls);
+                client.AuthenticationMechanisms.Remove("X0AUTH2");
+                client.Authenticate(_emailConfiguration.Email, _emailConfiguration.Password);
 
-                    client.Send(mailMessage);
-                }
-                catch
-                {
-                    throw;
-                }
-                finally
-                {
-                    client.Disconnect(true);
-                    client.Dispose();
-                }
+                client.Send(mailMessage);
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                client.Disconnect(true);
+                client.Dispose();
             }
         }
 
         private async Task SendAsync(MimeMessage mailMessage)
         {
-            using (var client = new SmtpClient())
+            using var client = new SmtpClient();
+            try
             {
-                try
-                {
-                    client.ServerCertificateValidationCallback = MySslCertificateValidationCallback;
-                    await client.ConnectAsync(_emailConfiguration.SmtpServer, _emailConfiguration.Port, SecureSocketOptions.StartTls);
-                    client.AuthenticationMechanisms.Remove("XOAUTH2");
-                    await client.AuthenticateAsync(_emailConfiguration.Email, _emailConfiguration.Password);
+                client.ServerCertificateValidationCallback = MySslCertificateValidationCallback;
+                await client.ConnectAsync(_emailConfiguration.SmtpServer, _emailConfiguration.Port, SecureSocketOptions.StartTls);
+                client.AuthenticationMechanisms.Remove("XOAUTH2");
+                await client.AuthenticateAsync(_emailConfiguration.Email, _emailConfiguration.Password);
 
-                    await client.SendAsync(mailMessage);
-                }
-                catch
-                {
-                    throw;
-                }
-                finally
-                {
-                    await client.DisconnectAsync(true);
-                    client.Dispose();
-                }
+                await client.SendAsync(mailMessage);
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                await client.DisconnectAsync(true);
+                client.Dispose();
             }
         }
         static bool MySslCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
