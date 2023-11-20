@@ -33,7 +33,7 @@ namespace EmailService
         private MimeMessage CreateEmailMessage(Message message)
         {
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress(_emailConfiguration.From));
+            emailMessage.From.Add(new MailboxAddress(_emailConfiguration.From, _emailConfiguration.Email));
             emailMessage.To.AddRange(message.To);
             emailMessage.Subject = message.Subject;
 
