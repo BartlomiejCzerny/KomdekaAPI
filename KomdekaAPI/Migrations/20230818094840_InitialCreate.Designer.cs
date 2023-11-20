@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KomdekaAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230618215832_InitialCreate")]
+    [Migration("20230818094840_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace KomdekaAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.3")
+                .HasAnnotation("ProductVersion", "7.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -557,13 +557,13 @@ namespace KomdekaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "05b86e5c-3851-49f1-9a71-c91d426b3116",
+                            Id = "075b8714-cb5d-4068-855a-e113d9b0d80f",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "0b670fe1-aa54-49af-8f30-db96473fb4bb",
+                            Id = "50fb2095-85c8-49e4-bb3f-6da7cab32ccb",
                             Name = "Pracownik",
                             NormalizedName = "PRACOWNIK"
                         });
