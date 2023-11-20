@@ -297,8 +297,8 @@ namespace KomdekaAPI.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "05b86e5c-3851-49f1-9a71-c91d426b3116", null, "Administrator", "ADMINISTRATOR" },
-                    { "0b670fe1-aa54-49af-8f30-db96473fb4bb", null, "Pracownik", "PRACOWNIK" }
+                    { "075b8714-cb5d-4068-855a-e113d9b0d80f", null, "Administrator", "ADMINISTRATOR" },
+                    { "50fb2095-85c8-49e4-bb3f-6da7cab32ccb", null, "Pracownik", "PRACOWNIK" }
                 });
 
             migrationBuilder.CreateIndex(
