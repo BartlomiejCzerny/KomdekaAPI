@@ -18,8 +18,8 @@ namespace KomdekaAPI.JwtFeatures
         private readonly UserManager<User> _userManager;
         public JwtHandler(IConfiguration configuration, UserManager<User> userManager)
         {
-            _userManager = userManager;
             _configuration = configuration;
+            _userManager = userManager;
             _jwtSettings = _configuration.GetSection("JwtSettings");         
         }
         private SigningCredentials GetSigningCredentials()
