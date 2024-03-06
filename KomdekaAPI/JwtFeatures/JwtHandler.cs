@@ -34,7 +34,7 @@ namespace KomdekaAPI.JwtFeatures
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.Email)
+                new(ClaimTypes.Name, user.Email)
             };
 
             var roles = await _userManager.GetRolesAsync(user);
