@@ -94,7 +94,8 @@ namespace KomdekaAPI.Controllers
                     var subject = "Blokada konta użytkownika w systemie Komdeka";
                     var greeting = $"Witaj { user.FirstName },<br><br>";
                     var body = "Twoje konto użytkownika w systemie Komdeka zostało zablokowane.<br>" +
-                               $"Aby odzyskać dostęp do konta kliknij poniższy link, a następnie postępuj zgodnie z instrukcjami systemu Komdeka:<br>{ userForAuthentication.ClientURI }<br><br>" +
+                               "Aby odzyskać dostęp do konta kliknij poniższy link, a następnie postępuj " +
+                               $"zgodnie z instrukcjami systemu Komdeka:<br>{ userForAuthentication.ClientURI }<br><br>" +
                                "Pamiętaj, że trzykrotne wprowadzenie nieprawidłowego hasła powoduje blokadę konta.<br><br>";
                     var signature = "Pozdrawiam<br>Bartłomiej Czerny<br>Software Developer / Administrator systemu Komdeka";
 
