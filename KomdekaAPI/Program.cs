@@ -45,7 +45,7 @@ builder.Services.AddIdentity<User, IdentityRole>(opt =>
     opt.Tokens.EmailConfirmationTokenProvider = "accountactivation";
 
     opt.Lockout.AllowedForNewUsers = true;
-    opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2);
+    opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
     opt.Lockout.MaxFailedAccessAttempts = 3;
 })
     .AddEntityFrameworkStores<RepositoryContext>()
