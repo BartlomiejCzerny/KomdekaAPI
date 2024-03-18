@@ -66,7 +66,7 @@ namespace KomdekaAPI.Controllers
                        "Jeżeli rejestracja konta nie została przeprowadzona przez Ciebie, zignoruj tę wiadomość.<br><br>";
             var signature = "Pozdrawiam<br>Bartłomiej Czerny<br>Software Developer / Administrator systemu Komdeka";
 
-            var message = new Message(new string[] { user.Email }, subject, greeting + body + signature);
+            var message = new Message([user.Email], subject, greeting + body + signature);
             await _emailSender.SendEmailAsync(message);
 
             await _userManager.AddToRoleAsync(user, "Pracownik");
@@ -99,7 +99,7 @@ namespace KomdekaAPI.Controllers
                                "Pamiętaj, że trzykrotne wprowadzenie nieprawidłowego hasła powoduje blokadę konta.<br><br>";
                     var signature = "Pozdrawiam<br>Bartłomiej Czerny<br>Software Developer / Administrator systemu Komdeka";
 
-                    var message = new Message(new string[] { userForAuthentication.Email }, subject, greeting + body + signature);
+                    var message = new Message([userForAuthentication.Email], subject, greeting + body + signature);
                     await _emailSender.SendEmailAsync(message);
 
                     return Unauthorized(new AuthResponseDto { ErrorMessage = "Konto użytkownika zostało zablokowane." });
@@ -134,7 +134,7 @@ namespace KomdekaAPI.Controllers
                        "Jeżeli logowanie nie zostało przeprowadzone przez Ciebie, zignoruj tę wiadomość.<br><br>";
             var signature = "Pozdrawiam<br>Bartłomiej Czerny<br>Software Developer / Administrator systemu Komdeka";
 
-            var message = new Message(new string[] { user.Email }, subject, greeting + body + signature);
+            var message = new Message([user.Email], subject, greeting + body + signature);
             await _emailSender.SendEmailAsync(message);
 
             return Ok(new AuthResponseDto { Is2StepVerificationRequired = true, Provider = "Email" });
@@ -200,7 +200,7 @@ namespace KomdekaAPI.Controllers
                        "Jeżeli prośba o zresetowanie hasła nie została wysłana przez Ciebie, zignoruj tę wiadomość.<br><br>";
             var signature = "Pozdrawiam<br>Bartłomiej Czerny<br>Software Developer / Administrator systemu Komdeka";
 
-            var message = new Message(new string[] { user.Email }, subject, greeting + body + signature);
+            var message = new Message([user.Email], subject, greeting + body + signature);
             await _emailSender.SendEmailAsync(message);
 
             return Ok();
