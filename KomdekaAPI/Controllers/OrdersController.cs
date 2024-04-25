@@ -93,6 +93,7 @@ namespace KomdekaAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteOrder(string id)
         {
             var order = await _context.Order.FindAsync(id);
