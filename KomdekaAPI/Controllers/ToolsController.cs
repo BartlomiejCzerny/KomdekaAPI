@@ -70,7 +70,6 @@ namespace KomdekaAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult<Tool>> PostTool(Tool tool)
         {
             _context.Tool.Add(tool);

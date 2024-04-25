@@ -70,7 +70,6 @@ namespace KomdekaAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult<Supplier>> PostSupplier(Supplier supplier)
         {
             _context.Supplier.Add(supplier);
