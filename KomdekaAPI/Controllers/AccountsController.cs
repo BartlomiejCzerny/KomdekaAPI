@@ -83,7 +83,7 @@ namespace KomdekaAPI.Controllers
                 return BadRequest("Konto użytkownika o podanym adresie e-mail nie istnieje.");
 
             if (!await _userManager.IsEmailConfirmedAsync(user))
-                return Unauthorized(new AuthResponseDto { ErrorMessage = "Nie potwierdzono adresu e-mail." });
+                return Unauthorized(new AuthResponseDto { ErrorMessage = "Nie aktywowano konta użytkownika." });
 
             if (!await _userManager.CheckPasswordAsync(user, userForAuthentication.Password))
             {
