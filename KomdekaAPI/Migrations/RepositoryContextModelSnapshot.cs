@@ -17,7 +17,7 @@ namespace KomdekaAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.8")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -554,13 +554,13 @@ namespace KomdekaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "075b8714-cb5d-4068-855a-e113d9b0d80f",
+                            Id = "32af4406-e0fe-4f0c-8103-f18d0441fb60",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "50fb2095-85c8-49e4-bb3f-6da7cab32ccb",
+                            Id = "0be1e240-ea48-43c1-a65a-823c1bcd1e1b",
                             Name = "Pracownik",
                             NormalizedName = "PRACOWNIK"
                         });
