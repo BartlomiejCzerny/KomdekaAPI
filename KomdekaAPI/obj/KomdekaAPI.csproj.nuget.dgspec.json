@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj": {}
+    "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\EmailService\\EmailService.csproj": {
+    "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\EmailService\\EmailService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\EmailService\\EmailService.csproj",
+        "projectUniqueName": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\EmailService\\EmailService.csproj",
         "projectName": "EmailService",
-        "projectPath": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\EmailService\\EmailService.csproj",
+        "projectPath": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\EmailService\\EmailService.csproj",
         "packagesPath": "C:\\Users\\Bartek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\EmailService\\obj\\",
+        "outputPath": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\EmailService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -75,18 +75,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj": {
+    "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj",
         "projectName": "KomdekaAPI",
-        "projectPath": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj",
+        "projectPath": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\KomdekaAPI\\KomdekaAPI.csproj",
         "packagesPath": "C:\\Users\\Bartek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\KomdekaAPI\\obj\\",
+        "outputPath": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\KomdekaAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -108,8 +108,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\EmailService\\EmailService.csproj": {
-                "projectPath": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\EmailService\\EmailService.csproj"
+              "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\EmailService\\EmailService.csproj": {
+                "projectPath": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\EmailService\\EmailService.csproj"
               }
             }
           }
@@ -179,7 +179,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
