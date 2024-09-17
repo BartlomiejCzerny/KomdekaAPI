@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CSTiy5AM9UE=",
+  "dgSpecHash": "/NFMHQ+8mLQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bartek\\Projekty\\Komdeka\\KomdekaAPI\\EmailService\\EmailService.csproj",
+  "projectFilePath": "C:\\Users\\Bartek\\Projekty\\KomdekaAPI\\EmailService\\EmailService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bartek\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\Bartek\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
