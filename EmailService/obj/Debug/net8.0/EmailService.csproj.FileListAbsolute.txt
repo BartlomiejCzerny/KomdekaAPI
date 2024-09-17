@@ -11,3 +11,16 @@ C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailS
 C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\EmailService\obj\Debug\net8.0\refint\EmailService.dll
 C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.pdb
 C:\Users\Bartek\Projekty\Komdeka\KomdekaAPI\EmailService\obj\Debug\net8.0\ref\EmailService.dll
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\bin\Debug\net8.0\EmailService.deps.json
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\bin\Debug\net8.0\EmailService.dll
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\bin\Debug\net8.0\EmailService.pdb
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.csproj.AssemblyReference.cache
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.AssemblyInfoInputs.cache
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.AssemblyInfo.cs
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.sourcelink.json
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.dll
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\refint\EmailService.dll
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\EmailService.pdb
+C:\Users\Bartek\Projekty\KomdekaAPI\EmailService\obj\Debug\net8.0\ref\EmailService.dll
